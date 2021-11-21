@@ -1,0 +1,2 @@
+# utilities
+code utile global
