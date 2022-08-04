@@ -1,14 +1,13 @@
 <?php
-use Order;
 
 abstract class ShippingType
 {
-    abstract public function getCost(Order $order);
+    abstract public function getCost();
 }
 
 class AircraftShipping extends ShippingType
 {
-    public function getCost($Order)
+    public function getCost()
     {
         return 25;
     }
@@ -16,7 +15,7 @@ class AircraftShipping extends ShippingType
 
 class TrainShipping extends ShippingType
 {
-    public function getCost($Order)
+    public function getCost()
     {
         return 10;
     }
