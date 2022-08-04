@@ -10,7 +10,7 @@ class AircraftShipping extends ShippingType
 {
     public function getCost($Order)
     {
-        /*...*/
+        return 25;
     }
 }
 
@@ -18,7 +18,7 @@ class TrainShipping extends ShippingType
 {
     public function getCost($Order)
     {
-        /*...*/
+        return 10;
     }
 }
 
@@ -28,7 +28,7 @@ class Order
 
     public function __construct($ShippingType)
     {
-        $this->shippingType = $shippingType;
+        $this->shippingType = $ShippingType;
     }
 
     public function getShippingCost()
@@ -36,3 +36,7 @@ class Order
         return $this->shippingType->getCost();
     }
 }
+
+$TrainShipping = new TrainShipping(); 
+$livraison = new Order($TrainShipping);
+$cout = $livraison->getShippingCost();
